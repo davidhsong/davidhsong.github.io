@@ -1,0 +1,454 @@
+/* David Song - portfolio */
+
+:root {
+  --paper: #ffffff;
+  --ink:   #000000;
+  --muted: #6b6b6b;
+  --rule:  #dcdcdc;
+
+  --measure: 42rem;
+  --step:    1.5rem;
+}
+
+/* Follows the OS. No toggle. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #000000;
+    --ink:   #ffffff;
+    --muted: #909090;
+    --rule:  #2b2b2b;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 4.5rem 1.5rem 4rem;
+}
+
+/* ---------- links ---------- */
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1px;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+}
+.skip:focus {
+  left: 1rem;
+  top: 1rem;
+  z-index: 10;
+  background: var(--paper);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--ink);
+}
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.avatar-frame {
+  position: relative;
+  flex: 0 0 auto;
+  width: 168px;
+  height: 168px;
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* "DS" placeholder, shown only when the profile photo is missing. */
+.avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+.avatar-frame.no-photo .avatar { display: none; }
+.avatar-frame.no-photo .avatar-fallback { display: flex; }
+
+.identity h1 {
+  margin: 0;
+  font-size: 2.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.tagline {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* ---------- tabs ---------- */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.25rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 2.5rem;
+}
+
+.tabs a {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+.tabs a:hover { color: var(--ink); }
+
+.tabs a[aria-selected="true"] {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- panels ---------- */
+
+/* Without JS the panels just render stacked. */
+.panel { margin-bottom: 3.5rem; }
+.panel:focus { outline: none; }
+
+.js .panel { display: none; }
+.js .panel.is-active { display: block; margin-bottom: 0; }
+
+.panel-title {
+  margin: 0 0 1.5rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.lede {
+  margin: 0 0 1.1rem;
+  font-size: 1.06rem;
+}
+
+p { margin: 0 0 1.1rem; }
+
+.sub {
+  margin: 2.5rem 0 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+
+.muted { color: var(--muted); }
+.stamp { font-size: 0.85rem; }
+
+/* ---------- entries (work / projects / education) ---------- */
+
+.entry { margin-bottom: 2.25rem; }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.entry-head h3,
+.entry-head h4 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.entry-date {
+  flex: 0 0 auto;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.entry-sub {
+  margin: 0.15rem 0 0.7rem;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+}
+.entry-sub a { color: var(--ink); font-style: normal; }
+
+.entry ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.entry li {
+  margin-bottom: 0.4rem;
+  font-size: 0.94rem;
+}
+
+/* ---------- plain lists ---------- */
+
+ul.plain {
+  margin: 0 0 1.1rem;
+  padding-left: 1.1rem;
+}
+ul.plain li { margin-bottom: 0.4rem; }
+
+/* ---------- definition rows (skills / numbers) ---------- */
+
+.skills { margin: 0; }
+
+.skills > div {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 1rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.9rem;
+}
+.skills > div:last-child { border-bottom: 1px solid var(--rule); }
+
+.skills dt { color: var(--muted); }
+.skills dd { margin: 0; }
+
+/* ---------- contact links ---------- */
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.links li {
+  display: grid;
+  grid-template-columns: 9rem 1fr;
+  gap: 0 1rem;
+  padding: 0.65rem 0;
+  border-top: 1px solid var(--rule);
+  font-size: 0.94rem;
+}
+.links li:last-child { border-bottom: 1px solid var(--rule); }
+
+.link-label { color: var(--muted); }
+
+/* ---------- spotify embeds ---------- */
+
+.embed-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+}
+.embed + .embed-label { margin-top: 1.5rem; }
+
+.embed {
+  margin-bottom: 1rem;
+  border: 1px solid var(--rule);
+  line-height: 0;
+}
+.embed iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+/*  Uncomment to strip the color out of the Spotify players,
+    with color returning on hover.
+
+.embed iframe { filter: grayscale(1); transition: filter 0.25s ease; }
+.embed:hover iframe { filter: none; }
+*/
+
+/* ---------- figures ---------- */
+
+figure {
+  margin: 0 0 1.25rem;
+}
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+}
+figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* ---------- fishing spots ---------- */
+
+.spots {
+  list-style: none;
+  margin: 0 0 1.1rem;
+  padding: 0;
+}
+.spots li {
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--rule);
+}
+.spots li:last-child { border-bottom: 1px solid var(--rule); }
+
+.spots strong {
+  display: block;
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+.spots span {
+  display: block;
+  margin-top: 0.1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* ---------- artist lists ---------- */
+
+/* Stops a long run of links turning into a wall of underlines. */
+.artists a { text-decoration: none; }
+.artists a:hover { text-decoration: underline; text-decoration-thickness: 1px; }
+
+/* ---------- photo slots ---------- */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+.gallery-single { grid-template-columns: minmax(0, 16rem); }
+
+.shot { margin: 0; }
+
+.shot img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+}
+
+/* Placeholder shown until the file is added to assets/. */
+.shot-hint { display: none; }
+
+.shot.missing img { display: none; }
+.shot.missing .shot-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  border: 1px dashed var(--rule);
+  color: var(--muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  text-align: center;
+  word-break: break-all;
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.86em;
+}
+
+/* ---------- footer ---------- */
+
+.foot {
+  margin-top: 4rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.foot p { margin: 0; }
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 33rem) {
+  .wrap { padding-top: 3rem; }
+
+  .masthead {
+    gap: 1.1rem;
+  }
+  .avatar-frame { width: 108px; height: 108px; }
+  .identity h1 { font-size: 1.6rem; }
+  .tagline { font-size: 0.88rem; }
+
+  .tabs { gap: 0.4rem 1rem; }
+
+  /* Stack the date under the title. */
+  .entry-head {
+    display: block;
+  }
+  .entry-date {
+    display: block;
+    margin-top: 0.15rem;
+  }
+
+  .skills > div,
+  .links li {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  .tabs, .foot, .skip { display: none; }
+  .js .panel { display: block !important; }
+  .wrap { max-width: none; }
+  a { text-decoration: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

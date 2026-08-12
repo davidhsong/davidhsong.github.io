@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Song</title>
+<meta name="description" content="Software engineer in San Jose, California.">
+<meta name="author" content="David Song">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="David Song">
+<meta property="og:description" content="Software engineer in San Jose, California.">
+<meta property="og:url" content="https://davidhsong.github.io">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>D</text></svg>">
+
+<script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="avatar-frame" id="avatar-frame">
+      <!-- Falls back to initials if the file is missing. -->
+      <img class="avatar" id="avatar" src="assets/profile_pic.jpg" alt="David Song" width="168" height="168">
+      <span class="avatar-fallback" aria-hidden="true">DS</span>
+    </div>
+    <div class="identity">
+      <h1>David Song</h1>
+      <p class="tagline">Software engineer. San&nbsp;Jose, California.</p>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+    <a role="tab" id="tab-about"    href="#about"    aria-controls="panel-about">about</a>
+    <a role="tab" id="tab-work"     href="#work"     aria-controls="panel-work">work</a>
+    <a role="tab" id="tab-projects" href="#projects" aria-controls="panel-projects">projects</a>
+    <a role="tab" id="tab-music"    href="#music"    aria-controls="panel-music">music</a>
+    <a role="tab" id="tab-fishing"  href="#fishing"  aria-controls="panel-fishing">fishing</a>
+    <a role="tab" id="tab-training" href="#training" aria-controls="panel-training">training</a>
+    <a role="tab" id="tab-now"      href="#now"      aria-controls="panel-now">now</a>
+    <a role="tab" id="tab-contact"  href="#contact"  aria-controls="panel-contact">contact</a>
+  </nav>
+
+  <main id="main">
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
+    <h2 class="panel-title">About</h2>
+
+    <p class="lede">
+      I'm a software engineer in San Jose. Most of my work is full stack, though I spend more
+      time on the backend and the infrastructure than anywhere else.
+    </p>
+    <p>
+      Right now I'm building <a href="https://replova.app">Replova</a>, a B2B SaaS I started. It
+      drafts Google review replies for med spas and dental offices in each client's own voice,
+      and it's running a live pilot with one practice.
+    </p>
+    <p>
+      Before that I interned at Life Stages in San Francisco.
+    </p>
+
+    <h3 class="sub">Education</h3>
+    <article class="entry">
+      <div class="entry-head">
+        <h4>San Jose State University</h4>
+        <span class="entry-date">Aug 2021 - Dec 2025</span>
+      </div>
+      <p class="entry-sub">B.S. Computer Science, Minor in Digital Media Art &middot; San Jose, CA</p>
+    </article>
+  </section>
+
+  <!-- ==================== WORK ==================== -->
+  <section class="panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
+    <h2 class="panel-title">Work</h2>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Founder &amp; Software Engineer</h3>
+        <span class="entry-date">Jan 2026 - Present</span>
+      </div>
+      <p class="entry-sub"><a href="https://replova.app">Replova</a>, B2B SaaS &middot; San Jose, CA</p>
+      <ul>
+        <li>Built a web app that writes Google review replies for med spas and dental offices in each
+          client's own voice. Next.js, TypeScript, PostgreSQL, and the Anthropic Claude API. Running a
+          live pilot with one practice, 118 replies drafted so far.</li>
+        <li>Owners review and edit every draft in a React dashboard before it posts. 68% went out unchanged.</li>
+        <li>Set up Docker Compose so the app, Postgres, and migrations run the same locally and in CI.
+          47 Jest tests hit a real database on every push through GitHub Actions.</li>
+        <li>Moved nightly drafting and email digests onto AWS Lambda, scheduled with EventBridge and
+          writing exports to S3. Median draft takes 2.8s. Failed runs land in a dead-letter queue and
+          alarm through CloudWatch. All of it defined in Terraform.</li>
+        <li>Stripe handles billing. Verified webhook signatures and idempotency keys keep subscription
+          state correct when events retry or show up out of order.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Software Engineer Intern</h3>
+        <span class="entry-date">May 2024 - Jul 2024</span>
+      </div>
+      <p class="entry-sub"><a href="https://lifestages.us">Life Stages</a> &middot; San Francisco, CA</p>
+      <ul>
+        <li>Redesigned the Daily Check-in flow in React. Cut it from 6 steps to 3 and added client-side validation.</li>
+        <li>Pulled duplicated UI into reusable Hooks-based components. Fixed a Safari flexbox bug that
+          broke the check-in form on iOS.</li>
+        <li>Wrote unit and integration tests with Jest and React Testing Library, and added coverage
+          checks to the GitHub Actions pipeline.</li>
+        <li>Worked on a team of 6 engineers with daily standups, sprint planning, and peer PR review.</li>
+      </ul>
+    </article>
+
+    <h3 class="sub">Technical Skills</h3>
+    <dl class="skills">
+      <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java, SQL, HTML/CSS</dd></div>
+      <div><dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, MUI</dd></div>
+      <div><dt>Backend</dt><dd>Node.js, Express.js, REST APIs, Anthropic Claude API, Stripe, Webhooks, JWT, OAuth 2.0</dd></div>
+      <div><dt>Databases</dt><dd>PostgreSQL, Row Level Security, Supabase, ElasticSearch, Firebase Realtime Database</dd></div>
+      <div><dt>Cloud</dt><dd>AWS (Lambda, S3, EventBridge, CloudWatch, IAM), Terraform, Docker, Docker Compose, Linux, Vercel Serverless Functions, Raspberry Pi</dd></div>
+      <div><dt>CI/CD &amp; Testing</dt><dd>GitHub Actions, Jenkins, Jest, React Testing Library, Git</dd></div>
+    </dl>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="-1">
+    <h2 class="panel-title">Projects</h2>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>S.C. Detailing</h3>
+        <span class="entry-date">Sep 2025 - Jan 2026</span>
+      </div>
+      <p class="entry-sub">Booking and operations platform. Next.js, TypeScript, PostgreSQL, Supabase, Tailwind CSS</p>
+      <ul>
+        <li>Ran the booking, pricing, and availability platform for my own mobile car detailing
+          business. 26 bookings over 9 months.</li>
+        <li>Used PostgreSQL Row Level Security on Supabase to keep customer, operator, and admin data separate.</li>
+        <li>Added rate limiting, brute-force lockout, and CSP and HSTS headers to the auth endpoints.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>Zaiku</h3>
+        <span class="entry-date">Jan 2025 - Apr 2025</span>
+      </div>
+      <p class="entry-sub">Full-stack content search platform. React, Node.js, Express.js, ElasticSearch, PostgreSQL, Google OAuth 2.0</p>
+      <ul>
+        <li>Built a React search UI with debounced live results. ElasticSearch custom analyzers and
+          fuzzy matching handle typos.</li>
+        <li>Wrote an Express.js REST API with ingestion routes that index documents into ElasticSearch
+          using custom mappings.</li>
+        <li>Added JWT sessions and Google OAuth 2.0 sign-in, with tests covering ingestion, search, and login.</li>
+      </ul>
+    </article>
+
+    <article class="entry">
+      <div class="entry-head">
+        <h3>HydroSense</h3>
+        <span class="entry-date">Oct 2023 - Dec 2023</span>
+      </div>
+      <p class="entry-sub">IoT environmental monitoring dashboard. Python, Raspberry Pi, Firebase, Next.js, React, Google Sheets API v4, OAuth 2.0</p>
+      <ul>
+        <li>Owned the sensor pipeline on a team project. A Python service on a Raspberry Pi 4 reads an
+          SHT31D sensor over I2C and writes timestamped readings to Firebase every 60 seconds.</li>
+        <li>Built the reporting export with Google Sheets API v4 and the Drive Picker. Client-side OAuth
+          refresh kept long sessions writing without re-authentication.</li>
+        <li>Worked with teammates to surface readings in a Next.js and React dashboard for live and
+          historical views.</li>
+      </ul>
+    </article>
+  </section>
+
+  <!-- ==================== MUSIC ==================== -->
+  <section class="panel" id="panel-music" role="tabpanel" aria-labelledby="tab-music" tabindex="-1">
+    <h2 class="panel-title">Music</h2>
+
+    <p class="lede">
+      Mostly EDM and R&amp;B. On the EDM side it's melodic dubstep more than anything else,
+      the kind that leans on a melody instead of just the drop.
+    </p>
+
+    <dl class="skills artists">
+      <div>
+        <dt>EDM</dt>
+        <dd>
+          <a href="https://open.spotify.com/search/Dabin">Dabin</a>,
+          <a href="https://open.spotify.com/search/Seven%20Lions">Seven Lions</a>,
+          <a href="https://open.spotify.com/search/Illenium">Illenium</a>,
+          <a href="https://open.spotify.com/search/Audien">Audien</a>,
+          <a href="https://open.spotify.com/search/ISOxo">ISOxo</a>,
+          <a href="https://open.spotify.com/search/Gryffin">Gryffin</a>,
+          <a href="https://open.spotify.com/search/ISOKNOCK">ISOKNOCK</a>,
+          <a href="https://open.spotify.com/search/Alan%20Walker">Alan Walker</a>,
+          <a href="https://open.spotify.com/search/Martin%20Garrix">Martin Garrix</a>
+        </dd>
+      </div>
+      <div>
+        <dt>R&amp;B</dt>
+        <dd>
+          <a href="https://open.spotify.com/search/The%20Weeknd">The Weeknd</a>,
+          <a href="https://open.spotify.com/search/Kehlani">Kehlani</a>,
+          <a href="https://open.spotify.com/search/DEAN">DEAN</a>,
+          <a href="https://open.spotify.com/search/Tory%20Lanez">Tory Lanez</a>,
+          <a href="https://open.spotify.com/search/Khalid">Khalid</a>,
+          <a href="https://open.spotify.com/search/OVI%20WOOD">OVI WOOD</a>
+        </dd>
+      </div>
+    </dl>
+
+    <h3 class="sub">Playlists</h3>
+
+    <!--
+      To swap a playlist: in Spotify open it, ... menu, Share, Copy link. From
+      https://open.spotify.com/playlist/XXXXXXXX?si=... paste the XXXXXXXX part
+      below after /embed/playlist/. Drop the ?si= token, it isn't needed.
+      Playlists must be public to render for visitors.
+    -->
+
+    <p class="embed-label">EDM</p>
+    <div class="embed">
+      <iframe title="EDM playlist on Spotify" loading="lazy"
+        src="https://open.spotify.com/embed/playlist/0NNBbpyQOnf8Rl2U9LW46g?utm_source=generator"
+        width="100%" height="352" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <p class="embed-label">R&amp;B</p>
+    <div class="embed">
+      <iframe title="R&amp;B playlist on Spotify" loading="lazy"
+        src="https://open.spotify.com/embed/playlist/7GibjZSzgPkl6jGSv8Ph26?utm_source=generator"
+        width="100%" height="352" frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    </div>
+
+    <p class="muted">
+      The rest is on my
+      <a href="https://open.spotify.com/user/lpl0d2nfbnjlf4bo8pjjdynsz">Spotify profile</a>.
+    </p>
+  </section>
+
+  <!-- ==================== FISHING ==================== -->
+  <section class="panel" id="panel-fishing" role="tabpanel" aria-labelledby="tab-fishing" tabindex="-1">
+    <h2 class="panel-title">Fishing</h2>
+
+    <p class="lede">
+      I fish the Bay Area coast, from piers and shore mostly, and offshore when I can get on
+      a boat. Everything below is within driving distance.
+    </p>
+
+    <h3 class="sub">Spots</h3>
+    <ul class="spots">
+      <li>
+        <strong>Bodega Bay</strong>
+        <span>North of San Francisco. Fishes well from both land and boat. Surfperch, salmon, rockfish.</span>
+      </li>
+      <li>
+        <strong>Half Moon Bay</strong>
+        <span>The main jumping-off point for offshore trips. Halibut, lingcod, salmon, sharks.</span>
+      </li>
+      <li>
+        <strong>Pacifica Pier and Johnson Pier</strong>
+        <span>Easy pier fishing with basic gear. Striped bass, flounder, salmon, sturgeon.</span>
+      </li>
+      <li>
+        <strong>Fort Baker and Crissy Field</strong>
+        <span>Shore spots in Marin and San Francisco. Striped bass, halibut, leopard sharks.</span>
+      </li>
+      <li>
+        <strong>San Pablo Bay and Sausalito</strong>
+        <span>Good surf and shore water. Striped bass, salmon, halibut.</span>
+      </li>
+      <li>
+        <strong>Berkeley Flats and Emeryville</strong>
+        <span>Piers and shore. Striped bass and sturgeon.</span>
+      </li>
+      <li>
+        <strong>Lake Merced</strong>
+        <span>Local spot in San Francisco. Bass and a few other species.</span>
+      </li>
+    </ul>
+
+    <h3 class="sub">Photos</h3>
+    <p class="muted">
+      Drop your photos into <code>assets/</code> using the filenames below and they'll show up
+      here. No HTML to edit. Add more by copying one of the blocks in the source.
+    </p>
+    <div class="gallery">
+      <figure class="shot">
+        <img src="assets/fish-01.jpg" alt="David Song fishing">
+        <span class="shot-hint">assets/fish-01.jpg</span>
+      </figure>
+      <figure class="shot">
+        <img src="assets/fish-02.jpg" alt="David Song fishing">
+        <span class="shot-hint">assets/fish-02.jpg</span>
+      </figure>
+      <figure class="shot">
+        <img src="assets/fish-03.jpg" alt="David Song fishing">
+        <span class="shot-hint">assets/fish-03.jpg</span>
+      </figure>
+      <figure class="shot">
+        <img src="assets/fish-04.jpg" alt="David Song fishing">
+        <span class="shot-hint">assets/fish-04.jpg</span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== TRAINING ==================== -->
+  <section class="panel" id="panel-training" role="tabpanel" aria-labelledby="tab-training" tabindex="-1">
+    <h2 class="panel-title">Training</h2>
+
+    <p class="lede">
+      Push, pull, legs, three or four days a week depending on how the week goes.
+      I don't deadlift.
+    </p>
+    <p>
+      Progressive overload is the whole approach. Add a little weight or a rep to a lift
+      every session, keep a record of it, and let it compound.
+    </p>
+
+    <h3 class="sub">Split</h3>
+    <dl class="skills">
+      <div><dt>Push</dt><dd>Chest, shoulders, triceps</dd></div>
+      <div><dt>Pull</dt><dd>Back, biceps</dd></div>
+      <div><dt>Legs</dt><dd>Quads, hamstrings, calves</dd></div>
+    </dl>
+
+    <h3 class="sub">Numbers</h3>
+    <dl class="skills">
+      <div><dt>Bodyweight</dt><dd>140 lb</dd></div>
+      <div><dt>Bench</dt><dd>185 lb</dd></div>
+      <div><dt>Squat</dt><dd>205 lb</dd></div>
+      <div><dt>Row</dt><dd>270 lb</dd></div>
+      <div><dt>Pull-ups</dt><dd>30 consecutive</dd></div>
+    </dl>
+
+    <h3 class="sub">Progress</h3>
+    <div class="gallery gallery-single">
+      <figure class="shot">
+        <img src="assets/gym_pic.jpg" alt="David Song at the gym">
+        <span class="shot-hint">assets/gym_pic.jpg</span>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ==================== NOW ==================== -->
+  <section class="panel" id="panel-now" role="tabpanel" aria-labelledby="tab-now" tabindex="-1">
+    <h2 class="panel-title">Now</h2>
+
+    <!-- TODO: keep this current, and bump the date at the bottom -->
+    <p class="lede">
+      What I'm working on at the moment.
+    </p>
+    <ul class="plain">
+      <li>Growing <a href="https://replova.app">Replova</a> past its first pilot practice.</li>
+      <li>Looking for full-time software engineering roles in the Bay Area.</li>
+      <li>Fishing when I can, and back in the gym consistently.</li>
+    </ul>
+    <p class="muted stamp">Last updated August 2026.</p>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
+    <h2 class="panel-title">Contact</h2>
+
+    <p class="lede">
+      Email is the best way to reach me.
+    </p>
+
+    <ul class="links">
+      <li><span class="link-label">Email</span><a href="mailto:davidhsongg@gmail.com">davidhsongg@gmail.com</a></li>
+      <li><span class="link-label">LinkedIn</span><a href="https://linkedin.com/in/davidhsong">linkedin.com/in/davidhsong</a></li>
+      <li><span class="link-label">GitHub</span><a href="https://github.com/davidhsong">github.com/davidhsong</a></li>
+      <li><span class="link-label">Spotify</span><a href="https://open.spotify.com/user/lpl0d2nfbnjlf4bo8pjjdynsz">davidhsong</a></li>
+      <li><span class="link-label">Resume</span><a href="davidsong_resume.pdf">davidsong_resume.pdf</a></li>
+      <!-- Phone left off on purpose. Uncomment to add it back:
+        <li><span class="link-label">Phone</span><a href="tel:+16692361331">669-236-1331</a></li>
+      -->
+    </ul>
+  </section>
+
+  </main>
+
+  <footer class="foot">
+    <p>San Jose, CA</p>
+  </footer>
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
