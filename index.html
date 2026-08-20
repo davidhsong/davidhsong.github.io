@@ -57,9 +57,9 @@
       time on the backend and the infrastructure than anywhere else.
     </p>
     <p>
-      Right now I'm building <a href="https://replova.app">Replova</a>, a B2B SaaS I started. It
-      drafts Google review replies for med spas and dental offices in each client's own voice,
-      and it's running a live pilot with one practice.
+      Right now I'm building <a href="https://replova.app">Replova</a>, a reputation-management
+      SaaS that syncs Google reviews, creates contextual AI reply drafts, flags urgent feedback,
+      and lets businesses approve and publish responses.
     </p>
     <p>
       Before that I interned at Life Stages in San Francisco.
@@ -81,22 +81,19 @@
 
     <article class="entry">
       <div class="entry-head">
-        <h3>Founder &amp; Software Engineer</h3>
+        <h3>Founder &amp; Full-Stack Software Engineer</h3>
         <span class="entry-date">Jan 2026 - Present</span>
       </div>
       <p class="entry-sub"><a href="https://replova.app">Replova</a>, B2B SaaS &middot; San Jose, CA</p>
       <ul>
-        <li>Built a web app that writes Google review replies for med spas and dental offices in each
-          client's own voice. Next.js, TypeScript, PostgreSQL, and the Anthropic Claude API. Running a
-          live pilot with one practice, 118 replies drafted so far.</li>
-        <li>Owners review and edit every draft in a React dashboard before it posts. 68% went out unchanged.</li>
-        <li>Set up Docker Compose so the app, Postgres, and migrations run the same locally and in CI.
-          47 Jest tests hit a real database on every push through GitHub Actions.</li>
-        <li>Moved nightly drafting and email digests onto AWS Lambda, scheduled with EventBridge and
-          writing exports to S3. Median draft takes 2.8s. Failed runs land in a dead-letter queue and
-          alarm through CloudWatch. All of it defined in Terraform.</li>
-        <li>Stripe handles billing. Verified webhook signatures and idempotency keys keep subscription
-          state correct when events retry or show up out of order.</li>
+        <li>Architected and developed a full-stack reputation-management SaaS using Next.js, React,
+          TypeScript, Supabase, PostgreSQL, and Vercel.</li>
+        <li>Integrated the Google Places and Google Business Profile APIs for business discovery, OAuth
+          authorization, review synchronization, and direct reply publishing.</li>
+        <li>Built an AI-assisted review system that creates three contextual reply drafts, analyzes
+          sentiment, flags urgent reviews, and schedules approved responses.</li>
+        <li>Implemented Stripe subscription billing, secure magic-link authentication, plan-based feature
+          controls, and six automated background workflows.</li>
       </ul>
     </article>
 
@@ -122,8 +119,7 @@
       <div><dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, MUI</dd></div>
       <div><dt>Backend</dt><dd>Node.js, Express.js, REST APIs, Anthropic Claude API, Stripe, Webhooks, JWT, OAuth 2.0</dd></div>
       <div><dt>Databases</dt><dd>PostgreSQL, Row Level Security, Supabase, ElasticSearch, Firebase Realtime Database</dd></div>
-      <div><dt>Cloud</dt><dd>AWS (Lambda, S3, EventBridge, CloudWatch, IAM), Terraform, Docker, Docker Compose, Linux, Vercel Serverless Functions, Raspberry Pi</dd></div>
-      <div><dt>CI/CD &amp; Testing</dt><dd>GitHub Actions, Jenkins, Jest, React Testing Library, Git</dd></div>
+      <div><dt>Infrastructure &amp; Testing</dt><dd>Linux, Raspberry Pi, Vercel Serverless Functions, Docker, Jenkins, GitHub Actions, CI/CD, Jest, React Testing Library, Git</dd></div>
     </dl>
   </section>
 
@@ -138,8 +134,8 @@
       </div>
       <p class="entry-sub">Booking and operations platform. Next.js, TypeScript, PostgreSQL, Supabase, Tailwind CSS</p>
       <ul>
-        <li>Ran the booking, pricing, and availability platform for my own mobile car detailing
-          business. 26 bookings over 9 months.</li>
+        <li>Operated the booking, pricing, and availability platform for my own mobile car detailing
+          business, processing 26 bookings and $3,900 in revenue over two months.</li>
         <li>Used PostgreSQL Row Level Security on Supabase to keep customer, operator, and admin data separate.</li>
         <li>Added rate limiting, brute-force lockout, and CSP and HSTS headers to the auth endpoints.</li>
       </ul>
@@ -152,11 +148,12 @@
       </div>
       <p class="entry-sub">Full-stack content search platform. React, Node.js, Express.js, ElasticSearch, PostgreSQL, Google OAuth 2.0</p>
       <ul>
-        <li>Built a React search UI with debounced live results. ElasticSearch custom analyzers and
-          fuzzy matching handle typos.</li>
-        <li>Wrote an Express.js REST API with ingestion routes that index documents into ElasticSearch
-          using custom mappings.</li>
-        <li>Added JWT sessions and Google OAuth 2.0 sign-in, with tests covering ingestion, search, and login.</li>
+        <li>Designed a full-stack e-commerce application with a responsive React storefront,
+          relevance-ranked product search, category filtering, and a persistent cart with real-time updates.</li>
+        <li>Engineered 22 REST API endpoints for product, user, order, and contact workflows, secured
+          with bcrypt password hashing, JWT authentication, Google OAuth, and role-based authorization.</li>
+        <li>Developed an admin dashboard for live catalog, customer, order, revenue, payment, and
+          fulfillment data, backed by protected CRUD operations and automated email delivery via Nodemailer.</li>
       </ul>
     </article>
 
@@ -165,14 +162,14 @@
         <h3>HydroSense</h3>
         <span class="entry-date">Oct 2023 - Dec 2023</span>
       </div>
-      <p class="entry-sub">IoT environmental monitoring dashboard. Python, Raspberry Pi, Firebase, Next.js, React, Google Sheets API v4, OAuth 2.0</p>
+      <p class="entry-sub">IoT environmental monitoring dashboard. Next.js, React, Context API, Tailwind CSS, MUI, Google OAuth, Google Sheets API, Firebase Realtime Database</p>
       <ul>
-        <li>Owned the sensor pipeline on a team project. A Python service on a Raspberry Pi 4 reads an
-          SHT31D sensor over I2C and writes timestamped readings to Firebase every 60 seconds.</li>
-        <li>Built the reporting export with Google Sheets API v4 and the Drive Picker. Client-side OAuth
-          refresh kept long sessions writing without re-authentication.</li>
-        <li>Worked with teammates to surface readings in a Next.js and React dashboard for live and
-          historical views.</li>
+        <li>Led a three-person frontend team within a 17-member cross-functional engineering group to
+          deliver a responsive Next.js dashboard for an automated community-garden monitoring system.</li>
+        <li>Connected Google OAuth, Drive Picker, Sheets API, and Firebase Realtime Database so users
+          can authenticate, select spreadsheets, filter readings by date, and export sensor data.</li>
+        <li>Structured the React frontend across four user-facing pages and seven reusable components,
+          using Context API, Tailwind CSS, and MUI for shared state and responsive workflows.</li>
       </ul>
     </article>
   </section>
@@ -335,7 +332,7 @@
       What I'm working on at the moment.
     </p>
     <ul class="plain">
-      <li>Growing <a href="https://replova.app">Replova</a> past its first pilot practice.</li>
+      <li>Growing <a href="https://replova.app">Replova</a> and its reputation-management workflows.</li>
       <li>Looking for full-time software engineering roles in the Bay Area.</li>
       <li>Fishing when I can, and back in the gym consistently.</li>
     </ul>
@@ -355,7 +352,7 @@
       <li><span class="link-label">LinkedIn</span><a href="https://linkedin.com/in/davidhsong">linkedin.com/in/davidhsong</a></li>
       <li><span class="link-label">GitHub</span><a href="https://github.com/davidhsong">github.com/davidhsong</a></li>
       <li><span class="link-label">Spotify</span><a href="https://open.spotify.com/user/lpl0d2nfbnjlf4bo8pjjdynsz">davidhsong</a></li>
-      <li><span class="link-label">Resume</span><a href="davidsong_resume.pdf">davidsong_resume.pdf</a></li>
+      <li><span class="link-label">Resume</span><a href="david_s_resume.pdf">david_s_resume.pdf</a></li>
       <!-- Phone left off on purpose. Uncomment to add it back:
         <li><span class="link-label">Phone</span><a href="tel:+16692361331">669-236-1331</a></li>
       -->

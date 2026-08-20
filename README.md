@@ -10,7 +10,7 @@ index.html      content and all eight tab panels
 styles.css      styles
 main.js         tab routing, keyboard nav, photo fallback
 assets/         profile photo and other images
-davidsong_resume.pdf
+david_s_resume.pdf
 ```
 
 ## Running locally
