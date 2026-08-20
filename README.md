@@ -23,10 +23,8 @@ Open http://localhost:8000 and refresh after any edit. There is nothing to rebui
 
 ## Photos
 
-In place: `profile_pic.jpg` (header) and `gym_pic.jpg` (Training). Still empty:
-`fish-01.jpg` through `fish-04.jpg` (Fishing). Drop files into `assets/` with those
-names and they appear on their own. Empty slots show a dashed placeholder labelled with
-the filename they want. See [assets/README.md](assets/README.md).
+In place: `profile_pic.jpg` (header) and `gym_pic.jpg` (Training). See
+[assets/README.md](assets/README.md).
 
 ## Editing content
 
