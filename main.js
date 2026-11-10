@@ -1,29 +1,66 @@
-/* Tab routing, keyboard nav, and the profile photo fallback. */
+/* Tab routing, keyboard navigation, image fallbacks, and blog photo decks. */
 
 (function () {
   'use strict';
 
-  /* ---------- photos that may not be in assets/ yet ----------
-     Flags the container so CSS can swap in a placeholder. Means a photo
-     appears just by dropping the file in, with no HTML to edit. */
-
-  function whenMissing(img, container, className) {
+  function markMissingImage(img, container, className) {
     var mark = function () { container.classList.add(className); };
     img.addEventListener('error', mark);
-    // The error may already have fired before this script ran.
     if (img.complete && img.naturalWidth === 0) mark();
   }
 
   var frame = document.getElementById('avatar-frame');
   var avatar = document.getElementById('avatar');
-  if (frame && avatar) whenMissing(avatar, frame, 'no-photo');
+  if (frame && avatar) markMissingImage(avatar, frame, 'no-photo');
 
-  Array.prototype.forEach.call(document.querySelectorAll('.shot'), function (shot) {
-    var img = shot.querySelector('img');
-    if (img) whenMissing(img, shot, 'missing');
+  /* ---------- arrow-only photo decks ---------- */
+
+  Array.prototype.forEach.call(document.querySelectorAll('[data-photo-deck]'), function (deck) {
+    var slides = Array.prototype.slice.call(deck.querySelectorAll('[data-slide]'));
+    var previous = deck.querySelector('[data-gallery-prev]');
+    var next = deck.querySelector('[data-gallery-next]');
+    var currentLabel = deck.querySelector('[data-gallery-current]');
+    var totalLabel = deck.querySelector('[data-gallery-total]');
+    var index = 0;
+
+    if (!slides.length) return;
+    if (totalLabel) totalLabel.textContent = String(slides.length);
+
+    function render() {
+      slides.forEach(function (slide, slideIndex) {
+        slide.hidden = slideIndex !== index;
+      });
+      if (currentLabel) currentLabel.textContent = String(index + 1);
+    }
+
+    function move(step) {
+      index = (index + step + slides.length) % slides.length;
+      render();
+    }
+
+    if (slides.length < 2) {
+      if (previous) previous.hidden = true;
+      if (next) next.hidden = true;
+    } else {
+      deck.setAttribute('tabindex', '0');
+      if (previous) previous.addEventListener('click', function () { move(-1); });
+      if (next) next.addEventListener('click', function () { move(1); });
+
+      deck.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          move(-1);
+        } else if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          move(1);
+        }
+      });
+    }
+
+    render();
   });
 
-  /* ---------- tabs ---------- */
+  /* ---------- tab routing ---------- */
 
   var tablist = document.getElementById('tabs');
   if (!tablist) return;
@@ -34,7 +71,6 @@
   var DEFAULT = 'about';
   var BASE_TITLE = 'David Song';
 
-  // Empty or unknown hashes fall back to About.
   function nameFromHash() {
     var name = (window.location.hash || '').replace(/^#\/?/, '');
     return document.getElementById('panel-' + name) ? name : DEFAULT;
@@ -43,27 +79,24 @@
   function activate(name) {
     tabs.forEach(function (tab) {
       var isActive = tab.id === 'tab-' + name;
+      var panel = document.getElementById(tab.getAttribute('aria-controls'));
 
       tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      // Roving tabindex: only the selected tab sits in the tab order.
       tab.setAttribute('tabindex', isActive ? '0' : '-1');
 
-      var panel = document.getElementById(tab.getAttribute('aria-controls'));
       if (!panel) return;
+      panel.classList.toggle('is-active', isActive);
 
       if (isActive) {
-        panel.classList.add('is-active');
         document.title = name === DEFAULT
-          ? BASE_TITLE
+          ? BASE_TITLE + ' - Full-Stack Software Engineer'
           : BASE_TITLE + ' / ' + tab.textContent.trim();
-      } else {
-        panel.classList.remove('is-active');
       }
     });
   }
 
   function indexOfSelected() {
-    for (var i = 0; i < tabs.length; i++) {
+    for (var i = 0; i < tabs.length; i += 1) {
       if (tabs[i].getAttribute('aria-selected') === 'true') return i;
     }
     return 0;
@@ -71,19 +104,28 @@
 
   tablist.addEventListener('keydown', function (event) {
     var current = indexOfSelected();
-    var next;
+    var nextIndex;
 
     switch (event.key) {
-      case 'ArrowRight': next = (current + 1) % tabs.length; break;
-      case 'ArrowLeft':  next = (current - 1 + tabs.length) % tabs.length; break;
-      case 'Home':       next = 0; break;
-      case 'End':        next = tabs.length - 1; break;
-      default: return;
+      case 'ArrowRight':
+        nextIndex = (current + 1) % tabs.length;
+        break;
+      case 'ArrowLeft':
+        nextIndex = (current - 1 + tabs.length) % tabs.length;
+        break;
+      case 'Home':
+        nextIndex = 0;
+        break;
+      case 'End':
+        nextIndex = tabs.length - 1;
+        break;
+      default:
+        return;
     }
 
     event.preventDefault();
-    window.location.hash = tabs[next].getAttribute('href');
-    tabs[next].focus();
+    window.location.hash = tabs[nextIndex].getAttribute('href');
+    tabs[nextIndex].focus();
   });
 
   window.addEventListener('hashchange', function () {

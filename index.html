@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>David Song</title>
-<meta name="description" content="Software engineer in San Jose, California.">
+<title>David Song - Full-Stack Software Engineer</title>
+<meta name="description" content="David Song is a full-stack software engineer and SJSU computer science graduate in the San Francisco Bay Area.">
 <meta name="author" content="David Song">
+<meta name="theme-color" content="#f5f2eb">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="David Song">
-<meta property="og:description" content="Software engineer in San Jose, California.">
+<meta property="og:title" content="David Song - Full-Stack Software Engineer">
+<meta property="og:description" content="Full-stack product engineering, machine learning, and production-minded software.">
 <meta property="og:url" content="https://davidhsong.github.io">
+<meta property="og:image" content="https://davidhsong.github.io/assets/profile_pic.jpg">
 
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Georgia,serif'>D</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23161c24'/><text x='50' y='68' text-anchor='middle' font-size='55' fill='%23f5f2eb' font-family='Arial,sans-serif' font-weight='700'>DS</text></svg>">
 
 <script>document.documentElement.classList.add('js');</script>
 </head>
@@ -21,159 +23,452 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<div class="wrap">
-
+<div class="site-shell">
   <header class="masthead">
     <div class="avatar-frame" id="avatar-frame">
-      <!-- Falls back to initials if the file is missing. -->
-      <img class="avatar" id="avatar" src="assets/profile_pic.jpg" alt="David Song" width="168" height="168">
+      <img class="avatar" id="avatar" src="assets/profile_pic.jpg" alt="Portrait of David Song" width="168" height="168">
       <span class="avatar-fallback" aria-hidden="true">DS</span>
     </div>
+
     <div class="identity">
+      <p class="kicker">Full-stack software engineer</p>
       <h1>David Song</h1>
-      <p class="tagline">Software engineer. San&nbsp;Jose, California.</p>
+      <p class="tagline">I build end-to-end products across web, cloud, and machine learning.</p>
+      <div class="identity-meta">
+        <span>San Francisco Bay Area</span>
+        <span>SJSU CS '25</span>
+        <span>Open to software engineering roles</span>
+      </div>
     </div>
   </header>
 
-  <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
-    <a role="tab" id="tab-about"    href="#about"    aria-controls="panel-about">about</a>
-    <a role="tab" id="tab-work"     href="#work"     aria-controls="panel-work">work</a>
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Portfolio sections">
+    <a role="tab" id="tab-about" href="#about" aria-controls="panel-about">about</a>
+    <a role="tab" id="tab-work" href="#work" aria-controls="panel-work">experience</a>
     <a role="tab" id="tab-projects" href="#projects" aria-controls="panel-projects">projects</a>
-    <a role="tab" id="tab-music"    href="#music"    aria-controls="panel-music">music</a>
-    <a role="tab" id="tab-fishing"  href="#fishing"  aria-controls="panel-fishing">fishing</a>
+    <a role="tab" id="tab-blog" href="#blog" aria-controls="panel-blog">blog</a>
+    <a role="tab" id="tab-music" href="#music" aria-controls="panel-music">music</a>
+    <a role="tab" id="tab-fishing" href="#fishing" aria-controls="panel-fishing">fishing</a>
     <a role="tab" id="tab-training" href="#training" aria-controls="panel-training">training</a>
-    <a role="tab" id="tab-now"      href="#now"      aria-controls="panel-now">now</a>
-    <a role="tab" id="tab-contact"  href="#contact"  aria-controls="panel-contact">contact</a>
+    <a role="tab" id="tab-now" href="#now" aria-controls="panel-now">now</a>
+    <a role="tab" id="tab-contact" href="#contact" aria-controls="panel-contact">contact</a>
   </nav>
 
   <main id="main">
 
   <!-- ==================== ABOUT ==================== -->
   <section class="panel" id="panel-about" role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
-    <h2 class="panel-title">About</h2>
+    <div class="section-heading">
+      <p class="eyebrow">About</p>
+      <h2>Product-minded engineering, from interface to infrastructure.</h2>
+    </div>
 
-    <p class="lede">
-      I'm a software engineer in San Jose. Most of my work is full stack, though I spend more
-      time on the backend and the infrastructure than anywhere else.
-    </p>
-    <p>
-      Right now I'm building <a href="https://replova.app">Replova</a>, a reputation-management
-      SaaS that syncs Google reviews, creates contextual AI reply drafts, flags urgent feedback,
-      and lets businesses approve and publish responses.
-    </p>
-    <p>
-      Before that I interned at Life Stages in San Francisco.
-    </p>
-
-    <h3 class="sub">Education</h3>
-    <article class="entry">
-      <div class="entry-head">
-        <h4>San Jose State University</h4>
-        <span class="entry-date">Aug 2021 - Dec 2025</span>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p class="lede">
+          I'm a San Francisco Bay Area software engineer and San Jose State University computer science
+          graduate. I like owning the full path from a user's first click to the API, data model,
+          deployment, and feedback loop behind it.
+        </p>
+        <p>
+          My most formative industry experience was at <a href="https://lifestages.us">Life Stages</a>
+          in San Francisco, where I worked on a real healthcare product with a six-engineer team. I
+          simplified a core Daily Check-in flow, connected product screens to REST APIs, strengthened
+          TypeScript contracts, fixed an iOS Safari rendering issue, and added automated test coverage.
+        </p>
+        <p>
+          More recently, I've been moving deeper into machine learning and AI systems: training a
+          PyTorch activity classifier from Wi-Fi CSI data, studying production AI infrastructure, and
+          learning from the engineering communities at Fully Connected and PyTorch Conference 2026.
+        </p>
       </div>
-      <p class="entry-sub">B.S. Computer Science, Minor in Digital Media Art &middot; San Jose, CA</p>
-    </article>
+
+      <aside class="spotlight" aria-label="Life Stages internship highlights">
+        <p class="eyebrow">Life Stages / San Francisco</p>
+        <strong>6 steps &rarr; 3</strong>
+        <p>Halved the Daily Check-in flow and added validation to prevent invalid submissions.</p>
+        <ul class="compact-list">
+          <li>React + TypeScript product work</li>
+          <li>REST API integration</li>
+          <li>Jest + GitHub Actions coverage</li>
+        </ul>
+      </aside>
+    </div>
+
+    <div class="education-block">
+      <div class="section-heading section-heading-compact">
+        <p class="eyebrow">Education</p>
+        <h3>San Jose State University</h3>
+      </div>
+      <div class="education-meta">
+        <p>B.S. Computer Science, Minor in Digital Media Art</p>
+        <p>Degree conferred December 2025 &middot; San Jose, California</p>
+      </div>
+
+      <h4 class="label-heading">Relevant coursework</h4>
+      <ul class="chip-list" aria-label="Relevant coursework">
+        <li>Data Structures &amp; Algorithms</li>
+        <li>Software Engineering</li>
+        <li>Operating Systems</li>
+        <li>Database Management Systems</li>
+        <li>Artificial Intelligence</li>
+        <li>Machine Learning</li>
+        <li>Data Science Project</li>
+        <li>Processing Big Data</li>
+        <li>Information Security</li>
+        <li>Computer Architecture</li>
+        <li>Data Visualization</li>
+        <li>Web Development</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- ==================== WORK ==================== -->
+  <!-- ==================== EXPERIENCE ==================== -->
   <section class="panel" id="panel-work" role="tabpanel" aria-labelledby="tab-work" tabindex="-1">
-    <h2 class="panel-title">Work</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Experience</p>
+      <h2>A timeline of building, shipping, and leading.</h2>
+      <p>Professional roles, technical fellowships, and engineering leadership at Theta Tau.</p>
+    </div>
 
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Founder &amp; Full-Stack Software Engineer</h3>
-        <span class="entry-date">Jan 2026 - Present</span>
+    <div class="timeline" aria-label="Experience timeline">
+      <article class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">Jan - Jun 2026</span>
+            <span class="timeline-place">San Jose, CA</span>
+          </div>
+          <h3>Founder &amp; Full-Stack Software Engineer</h3>
+          <p class="timeline-org"><a href="https://replova.app">Replova</a></p>
+          <ul>
+            <li>Built an installable review platform tested by two businesses, syncing Google Business Profile reviews and replies.</li>
+            <li>Drafted replies in each business's voice with Claude and labeled reviews by sentiment and urgency.</li>
+            <li>Added Stripe subscriptions and Resend email digests, then scheduled review syncs with AWS Lambda and EventBridge.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">2024 - 2025</span>
+            <span class="timeline-place">San Jose, CA</span>
+          </div>
+          <h3>Webmaster</h3>
+          <p class="timeline-org">Theta Tau Professional Engineering Fraternity</p>
+          <ul>
+            <li>Maintained the chapter website as a dependable source for recruitment, events, leadership, and member information.</li>
+            <li>Translated chapter updates into clear, responsive pages and coordinated content changes with the executive board.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">Jul - Sep 2024</span>
+            <span class="timeline-place">Remote</span>
+          </div>
+          <h3>Software Engineering Fellow</h3>
+          <p class="timeline-org">Headstarter</p>
+          <ul>
+            <li>Built and shipped AI-focused software in weekly project cycles while practicing product scoping, teamwork, and technical communication.</li>
+            <li>Turned Pathways2Tech sessions into practical lessons on self-starting, customer empathy, cross-functional work, and continuous learning.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+
+      <article class="timeline-item timeline-item-featured">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">May - Jul 2024</span>
+            <span class="timeline-place">San Francisco, CA</span>
+          </div>
+          <h3>Software Engineer Intern</h3>
+          <p class="timeline-org"><a href="https://lifestages.us">Life Stages</a></p>
+          <ul>
+            <li>Halved the React Daily Check-in flow from six steps to three and added validation to prevent invalid submissions.</li>
+            <li>Connected check-in and profile screens to REST APIs and defined request and response data with TypeScript.</li>
+            <li>Replaced repeated interface elements with reusable React components, simplifying updates across screens.</li>
+            <li>Fixed an iOS Safari flexbox issue that prevented the check-in form from displaying correctly.</li>
+            <li>Added Jest unit and integration tests and GitHub Actions checks for coverage.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">Nov 2023 - Dec 2025</span>
+            <span class="timeline-place">San Jose, CA</span>
+          </div>
+          <h3>Member</h3>
+          <p class="timeline-org">Theta Tau Professional Engineering Fraternity</p>
+          <ul>
+            <li>Collaborated with engineers across disciplines through professional development, technical projects, and chapter service.</li>
+            <li>Supported member and recruitment events while staying active in the chapter through graduation.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-card">
+          <div class="timeline-topline">
+            <span class="timeline-date">Oct - Nov 2023</span>
+            <span class="timeline-place">San Jose, CA</span>
+          </div>
+          <h3>Front-End Lead</h3>
+          <p class="timeline-org">Theta Tau &middot; HydroSense</p>
+          <ul>
+            <li>Led a three-person frontend team within a 17-member engineering group to build an environmental monitoring dashboard.</li>
+            <li>Structured four user-facing pages and seven reusable components with Next.js, React Context, Tailwind CSS, and MUI.</li>
+            <li>Connected Google sign-in, Drive file selection, Sheets exports, and Firebase data for the SJSU Community Garden.</li>
+          </ul>
+        </div>
+        <span class="timeline-marker" aria-hidden="true"></span>
+      </article>
+    </div>
+
+    <div class="skills-section">
+      <div class="section-heading section-heading-compact">
+        <p class="eyebrow">Technical toolkit</p>
+        <h3>Tools I use to move from idea to production.</h3>
       </div>
-      <p class="entry-sub"><a href="https://replova.app">Replova</a>, B2B SaaS &middot; San Jose, CA</p>
-      <ul>
-        <li>Architected and developed a full-stack reputation-management SaaS using Next.js, React,
-          TypeScript, Supabase, PostgreSQL, and Vercel.</li>
-        <li>Integrated the Google Places and Google Business Profile APIs for business discovery, OAuth
-          authorization, review synchronization, and direct reply publishing.</li>
-        <li>Built an AI-assisted review system that creates three contextual reply drafts, analyzes
-          sentiment, flags urgent reviews, and schedules approved responses.</li>
-        <li>Implemented Stripe subscription billing, secure magic-link authentication, plan-based feature
-          controls, and six automated background workflows.</li>
-      </ul>
-    </article>
-
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Software Engineer Intern</h3>
-        <span class="entry-date">May 2024 - Jul 2024</span>
-      </div>
-      <p class="entry-sub"><a href="https://lifestages.us">Life Stages</a> &middot; San Francisco, CA</p>
-      <ul>
-        <li>Redesigned the Daily Check-in flow in React. Cut it from 6 steps to 3 and added client-side validation.</li>
-        <li>Pulled duplicated UI into reusable Hooks-based components. Fixed a Safari flexbox bug that
-          broke the check-in form on iOS.</li>
-        <li>Wrote unit and integration tests with Jest and React Testing Library, and added coverage
-          checks to the GitHub Actions pipeline.</li>
-        <li>Worked on a team of 6 engineers with daily standups, sprint planning, and peer PR review.</li>
-      </ul>
-    </article>
-
-    <h3 class="sub">Technical Skills</h3>
-    <dl class="skills">
-      <div><dt>Languages</dt><dd>TypeScript, JavaScript, Python, Java, SQL, HTML/CSS</dd></div>
-      <div><dt>Frontend</dt><dd>React, Next.js, Tailwind CSS, MUI</dd></div>
-      <div><dt>Backend</dt><dd>Node.js, Express.js, REST APIs, Anthropic Claude API, Stripe, Webhooks, JWT, OAuth 2.0</dd></div>
-      <div><dt>Databases</dt><dd>PostgreSQL, Row Level Security, Supabase, ElasticSearch, Firebase Realtime Database</dd></div>
-      <div><dt>Infrastructure &amp; Testing</dt><dd>Linux, Raspberry Pi, Vercel Serverless Functions, Docker, Jenkins, GitHub Actions, CI/CD, Jest, React Testing Library, Git</dd></div>
-    </dl>
+      <dl class="skills">
+        <div><dt>Languages</dt><dd>Python, TypeScript, JavaScript, Java, C++, SQL, HTML/CSS</dd></div>
+        <div><dt>Frameworks &amp; Libraries</dt><dd>React, Next.js, Node.js, Express.js, FastAPI, PyTorch, Jest, React Testing Library</dd></div>
+        <div><dt>Databases &amp; Search</dt><dd>PostgreSQL, MySQL, SQLite, Redis, Elasticsearch, Supabase, Firebase</dd></div>
+        <div><dt>Cloud &amp; DevOps</dt><dd>AWS Lambda, EventBridge, CloudWatch, Docker, Git, GitHub Actions, Vercel</dd></div>
+        <div><dt>APIs, AI &amp; Security</dt><dd>REST APIs, Anthropic Claude API, OAuth 2.0, JWT, Row Level Security, Stripe, Resend</dd></div>
+      </dl>
+    </div>
   </section>
 
   <!-- ==================== PROJECTS ==================== -->
   <section class="panel" id="panel-projects" role="tabpanel" aria-labelledby="tab-projects" tabindex="-1">
-    <h2 class="panel-title">Projects</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Selected projects</p>
+      <h2>Systems that classify, synchronize, search, sell, and sense.</h2>
+      <p>Recent machine-learning work first, followed by production full-stack builds.</p>
+    </div>
 
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Booking &amp; Operations Platform for a Mobile Detailing Business</h3>
+    <div class="project-grid">
+      <article class="project-card project-card-featured">
+        <div class="project-number">01</div>
+        <div class="project-heading">
+          <p class="project-date">Oct 2026 - Present</p>
+          <h3>Wi-Fi CSI-Based Activity Classification</h3>
+          <p class="project-stack">Python &middot; PyTorch &middot; NumPy &middot; pandas</p>
+        </div>
+        <ul>
+          <li>Trained a PyTorch model to recognize three activities from 461 Wi-Fi signal samples.</li>
+          <li>Measured accuracy and F1 score across two antenna designs and clear or blocked Wi-Fi paths.</li>
+          <li>Added scripts to train the model, save checkpoints, and classify a new Wi-Fi sample.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-number">02</div>
+        <div class="project-heading">
+          <p class="project-date">Jan - Jun 2026</p>
+          <h3>Google Business Profile Review Sync &amp; Reply Drafting</h3>
+          <p class="project-name">Replova</p>
+          <p class="project-stack">Next.js &middot; TypeScript &middot; Supabase/PostgreSQL &middot; Stripe &middot; Claude API &middot; AWS</p>
+        </div>
+        <ul>
+          <li>Built an installable review platform tested by two businesses; synced Google Business Profile reviews and replies.</li>
+          <li>Drafted brand-aligned replies with Claude and labeled reviews by sentiment and urgency.</li>
+          <li>Added subscriptions, email digests, and scheduled review syncs with Stripe, Resend, Lambda, and EventBridge.</li>
+        </ul>
+        <a class="text-link" href="https://replova.app">Visit Replova <span aria-hidden="true">&nearr;</span></a>
+      </article>
+
+      <article class="project-card">
+        <div class="project-number">03</div>
+        <div class="project-heading">
+          <p class="project-date">Sep 2025 - Jan 2026</p>
+          <h3>Mobile Car Detailing Booking &amp; Availability</h3>
+          <p class="project-stack">Next.js &middot; TypeScript &middot; PostgreSQL &middot; Supabase &middot; AWS</p>
+        </div>
+        <ul>
+          <li>Built and operated a booking platform supporting 26 completed bookings and $3,900 in revenue over two months.</li>
+          <li>Separated customer, operator, and admin access and automated expired holds and availability updates.</li>
+          <li>Added rate limits, account lockout, CSP, HSTS, and frame protection.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-number">04</div>
+        <div class="project-heading">
+          <p class="project-date">Jan - Apr 2025</p>
+          <h3>E-Commerce Product Search &amp; Order Management</h3>
+          <p class="project-name">Zaiku</p>
+          <p class="project-stack">React &middot; Node.js &middot; Express.js &middot; Elasticsearch &middot; PostgreSQL &middot; OAuth 2.0</p>
+        </div>
+        <ul>
+          <li>Built a React storefront with product filters and live cart totals.</li>
+          <li>Added typo-tolerant Elasticsearch search with custom analyzers and fuzzy matching.</li>
+          <li>Built 22 REST endpoints and admin tools for products, orders, and payments with JWT and role-based access.</li>
+        </ul>
+      </article>
+
+      <article class="project-card">
+        <div class="project-number">05</div>
+        <div class="project-heading">
+          <p class="project-date">Oct - Nov 2023</p>
+          <h3>IoT Environmental Monitoring Dashboard</h3>
+          <p class="project-name">HydroSense</p>
+          <p class="project-stack">Next.js &middot; Python &middot; Raspberry Pi &middot; Firebase &middot; Google Sheets API</p>
+        </div>
+        <ul>
+          <li>Led a three-person frontend team on live and historical temperature and humidity monitoring.</li>
+          <li>Built a Raspberry Pi Python service that read I2C sensors every 60 seconds and stored readings in Firebase.</li>
+          <li>Added Google sign-in, Drive file selection, and Google Sheets exports.</li>
+        </ul>
+        <a class="text-link" href="https://hydro-sensepnm.vercel.app/MeetTheTeam">View team project <span aria-hidden="true">&nearr;</span></a>
+      </article>
+    </div>
+
+    <div class="section-heading section-heading-compact additional-heading">
+      <p class="eyebrow">Additional builds</p>
+      <h3>More from the archive.</h3>
+    </div>
+
+    <div class="mini-project-grid">
+      <article class="mini-project">
+        <p class="project-date">SJHacks &middot; 3rd place, Public Safety</p>
+        <h3>SafeRoute</h3>
+        <p>Safer route planning with Mapbox GL, React Context, Firestore, and Firebase Authentication, built in 24 hours against more than 90 teams.</p>
+      </article>
+      <article class="mini-project">
+        <p class="project-date">Mar - Apr 2025</p>
+        <h3>PromptWave</h3>
+        <p>A React chatbot that switches between Hugging Face models mid-conversation, with Express routing, Redis caching, and asynchronous handlers.</p>
+      </article>
+      <article class="mini-project">
+        <p class="project-date">Feb - Mar 2024</p>
+        <h3>SalesForecast</h3>
+        <p>A React and Flask forecasting dashboard comparing linear regression, XGBoost, and LSTM predictions with seasonal and accuracy charts.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ==================== BLOG ==================== -->
+  <section class="panel" id="panel-blog" role="tabpanel" aria-labelledby="tab-blog" tabindex="-1">
+    <div class="section-heading">
+      <p class="eyebrow">Field notes</p>
+      <h2>What I'm learning in the rooms where AI gets built.</h2>
+      <p>Conference notes on infrastructure, open-source machine learning, and the distance between a demo and a durable system.</p>
+    </div>
+
+    <article class="blog-post">
+      <header class="blog-header">
+        <div>
+          <p class="blog-date">September 29 - October 1, 2026 &middot; San Francisco</p>
+          <h3>CoreWeave Fully Connected 2026</h3>
+        </div>
+        <span class="post-index">01</span>
+      </header>
+
+      <div class="photo-deck" data-photo-deck aria-label="CoreWeave Fully Connected 2026 photos">
+        <figure class="photo-slide" data-slide>
+          <img src="assets/coreweave_pics/IMG_7829.JPG" alt="Fully Connected 2026 expo floor under red lighting" loading="lazy">
+          <figcaption>The Fully Connected expo floor at Moscone South.</figcaption>
+        </figure>
+        <figure class="photo-slide" data-slide hidden>
+          <img src="assets/coreweave_pics/IMG_7831 (1).JPG" alt="CoreWeave and Mercado Libre exhibit about building search understanding" loading="lazy">
+          <figcaption>Production AI use cases on the show floor.</figcaption>
+        </figure>
+        <figure class="photo-slide" data-slide hidden>
+          <img src="assets/coreweave_pics/IMG_7831.JPG" alt="CoreWeave and Parallel discussion on the conference main stage" loading="lazy">
+          <figcaption>A CoreWeave and Parallel conversation on the main stage.</figcaption>
+        </figure>
+        <figure class="photo-slide" data-slide hidden>
+          <img src="assets/coreweave_pics/IMG_7923.JPG" alt="San Francisco Moscone Center entrance during Fully Connected 2026" loading="lazy">
+          <figcaption>Moscone Center, San Francisco.</figcaption>
+        </figure>
+        <button class="gallery-arrow gallery-arrow-prev" type="button" data-gallery-prev aria-label="Previous CoreWeave photo">
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <button class="gallery-arrow gallery-arrow-next" type="button" data-gallery-next aria-label="Next CoreWeave photo">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+        <p class="gallery-count" aria-live="polite"><span data-gallery-current>1</span> / <span data-gallery-total>4</span></p>
       </div>
-      <p class="entry-sub">Next.js, TypeScript, PostgreSQL, Supabase, Tailwind CSS</p>
-      <ul>
-        <li>Operated the booking, pricing, and availability platform for my own mobile car detailing
-          business, processing 26 bookings and $3,900 in revenue over two months.</li>
-        <li>Used PostgreSQL Row Level Security on Supabase to keep customer, operator, and admin data separate.</li>
-        <li>Added rate limiting, brute-force lockout, and CSP and HSTS headers to the auth endpoints.</li>
-      </ul>
+
+      <div class="blog-copy">
+        <p class="lede">
+          Fully Connected made one idea feel concrete: once AI leaves a notebook, infrastructure
+          becomes part of the product. Model quality matters, but so do the systems that keep training,
+          serving, and evaluation fast, observable, secure, and affordable.
+        </p>
+        <h4>What I took away</h4>
+        <ul>
+          <li><strong>End-to-end performance beats isolated benchmarks.</strong> Compute, networking, storage, orchestration, and inference strategy all shape latency, throughput, and cost.</li>
+          <li><strong>Inference is a design choice.</strong> Serverless, dedicated, and self-hosted serving trade convenience for control in different ways; the right answer depends on workload shape and service guarantees.</li>
+          <li><strong>Agents need an evaluation loop.</strong> Tracing, production-derived test sets, regression checks, and quality gates are what turn an impressive workflow into a system people can trust.</li>
+        </ul>
+        <p>
+          The biggest shift in my thinking was to treat observability and evaluation as product
+          features, not cleanup work. That is the lens I want to bring into future AI projects.
+        </p>
+      </div>
     </article>
 
-    <article class="entry">
-      <div class="entry-head">
-        <h3>Full-Stack Content Search Platform</h3>
-      </div>
-      <p class="entry-sub">React, Node.js, Express.js, ElasticSearch, PostgreSQL, Google OAuth 2.0</p>
-      <ul>
-        <li>Designed a full-stack e-commerce application with a responsive React storefront,
-          relevance-ranked product search, category filtering, and a persistent cart with real-time updates.</li>
-        <li>Engineered 22 REST API endpoints for product, user, order, and contact workflows, secured
-          with bcrypt password hashing, JWT authentication, Google OAuth, and role-based authorization.</li>
-        <li>Developed an admin dashboard for live catalog, customer, order, revenue, payment, and
-          fulfillment data, backed by protected CRUD operations and automated email delivery via Nodemailer.</li>
-      </ul>
-    </article>
+    <article class="blog-post">
+      <header class="blog-header">
+        <div>
+          <p class="blog-date">October 20 - 21, 2026 &middot; San Jose</p>
+          <h3>PyTorch Conference North America 2026</h3>
+        </div>
+        <span class="post-index">02</span>
+      </header>
 
-    <article class="entry">
-      <div class="entry-head">
-        <h3>IoT Environmental Monitoring Dashboard</h3>
+      <div class="photo-deck" data-photo-deck aria-label="PyTorch Conference North America 2026 photos">
+        <figure class="photo-slide" data-slide>
+          <img src="assets/pytorch_pics/IMG_8220.JPG" alt="Opening stage at PyTorch Conference North America 2026" loading="lazy">
+          <figcaption>PyTorch Conference North America 2026 in San Jose.</figcaption>
+        </figure>
+        <button class="gallery-arrow gallery-arrow-prev" type="button" data-gallery-prev aria-label="Previous PyTorch photo">
+          <span aria-hidden="true">&larr;</span>
+        </button>
+        <button class="gallery-arrow gallery-arrow-next" type="button" data-gallery-next aria-label="Next PyTorch photo">
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+        <p class="gallery-count" aria-live="polite"><span data-gallery-current>1</span> / <span data-gallery-total>1</span></p>
       </div>
-      <p class="entry-sub">Next.js, React, Context API, Tailwind CSS, MUI, Google OAuth, Google Sheets API, Firebase Realtime Database</p>
-      <ul>
-        <li>Led a three-person frontend team within a 17-member cross-functional engineering group to
-          deliver a responsive Next.js dashboard for an automated community-garden monitoring system.</li>
-        <li>Connected Google OAuth, Drive Picker, Sheets API, and Firebase Realtime Database so users
-          can authenticate, select spreadsheets, filter readings by date, and export sensor data.</li>
-        <li>Structured the React frontend across four user-facing pages and seven reusable components,
-          using Context API, Tailwind CSS, and MUI for shared state and responsive workflows.</li>
-      </ul>
+
+      <div class="blog-copy">
+        <p class="lede">
+          PyTorch Conference landed at the right moment for me. I had just started using PyTorch to
+          classify human activity from Wi-Fi CSI data, so the talks connected framework internals and
+          frontier-scale systems back to the training loop I was building myself.
+        </p>
+        <h4>What I took away</h4>
+        <ul>
+          <li><strong>Portability now spans the whole stack.</strong> PyTorch is being pushed across GPUs, TPUs, Trainium, custom accelerators, and on-device runtimes without giving up the developer experience that made it useful.</li>
+          <li><strong>Performance work is measurement work.</strong> Profilers, compiler tooling, distributed communication, CI, and observability matter because they make bottlenecks visible and improvements repeatable.</li>
+          <li><strong>Open source is an operating model.</strong> Release engineering, compatibility testing, maintainers, and community feedback are as important as any single feature.</li>
+        </ul>
+        <p>
+          I left wanting to be more disciplined about experiments: save checkpoints, record the data
+          conditions behind every metric, and make inference on a new sample as reproducible as training.
+        </p>
+      </div>
     </article>
   </section>
 
   <!-- ==================== MUSIC ==================== -->
   <section class="panel" id="panel-music" role="tabpanel" aria-labelledby="tab-music" tabindex="-1">
-    <h2 class="panel-title">Music</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Music</p>
+      <h2>Melodic EDM, R&amp;B, and everything around them.</h2>
+    </div>
 
     <p class="lede">
       Mostly EDM and R&amp;B. On the EDM side it's melodic dubstep more than anything else,
@@ -208,29 +503,25 @@
       </div>
     </dl>
 
-    <h3 class="sub">Playlists</h3>
-
-    <!--
-      To swap a playlist: in Spotify open it, ... menu, Share, Copy link. From
-      https://open.spotify.com/playlist/XXXXXXXX?si=... paste the XXXXXXXX part
-      below after /embed/playlist/. Drop the ?si= token, it isn't needed.
-      Playlists must be public to render for visitors.
-    -->
-
-    <p class="embed-label">EDM</p>
-    <div class="embed">
-      <iframe title="EDM playlist on Spotify" loading="lazy"
-        src="https://open.spotify.com/embed/playlist/0NNBbpyQOnf8Rl2U9LW46g?utm_source=generator"
-        width="100%" height="352" frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </div>
-
-    <p class="embed-label">R&amp;B</p>
-    <div class="embed">
-      <iframe title="R&amp;B playlist on Spotify" loading="lazy"
-        src="https://open.spotify.com/embed/playlist/7GibjZSzgPkl6jGSv8Ph26?utm_source=generator"
-        width="100%" height="352" frameborder="0"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+    <div class="music-grid">
+      <div>
+        <p class="embed-label">EDM</p>
+        <div class="embed">
+          <iframe title="EDM playlist on Spotify" loading="lazy"
+            src="https://open.spotify.com/embed/playlist/0NNBbpyQOnf8Rl2U9LW46g?utm_source=generator"
+            width="100%" height="352"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
+      <div>
+        <p class="embed-label">R&amp;B</p>
+        <div class="embed">
+          <iframe title="R&amp;B playlist on Spotify" loading="lazy"
+            src="https://open.spotify.com/embed/playlist/7GibjZSzgPkl6jGSv8Ph26?utm_source=generator"
+            width="100%" height="352"
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+        </div>
+      </div>
     </div>
 
     <p class="muted">
@@ -241,127 +532,119 @@
 
   <!-- ==================== FISHING ==================== -->
   <section class="panel" id="panel-fishing" role="tabpanel" aria-labelledby="tab-fishing" tabindex="-1">
-    <h2 class="panel-title">Fishing</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Fishing</p>
+      <h2>Bay Area water, from shore to offshore.</h2>
+    </div>
 
     <p class="lede">
       I fish the Bay Area coast, from piers and shore mostly, and offshore when I can get on
       a boat. Everything below is within driving distance.
     </p>
 
-    <h3 class="sub">Spots</h3>
+    <h3 class="label-heading">Spots</h3>
     <ul class="spots">
-      <li>
-        <strong>Bodega Bay</strong>
-        <span>North of San Francisco. Fishes well from both land and boat. Surfperch, salmon, rockfish.</span>
-      </li>
-      <li>
-        <strong>Half Moon Bay</strong>
-        <span>The main jumping-off point for offshore trips. Halibut, lingcod, salmon, sharks.</span>
-      </li>
-      <li>
-        <strong>Pacifica Pier and Johnson Pier</strong>
-        <span>Easy pier fishing with basic gear. Striped bass, flounder, salmon, sturgeon.</span>
-      </li>
-      <li>
-        <strong>Fort Baker and Crissy Field</strong>
-        <span>Shore spots in Marin and San Francisco. Striped bass, halibut, leopard sharks.</span>
-      </li>
-      <li>
-        <strong>San Pablo Bay and Sausalito</strong>
-        <span>Good surf and shore water. Striped bass, salmon, halibut.</span>
-      </li>
-      <li>
-        <strong>Berkeley Flats and Emeryville</strong>
-        <span>Piers and shore. Striped bass and sturgeon.</span>
-      </li>
-      <li>
-        <strong>Lake Merced</strong>
-        <span>Local spot in San Francisco. Bass and a few other species.</span>
-      </li>
+      <li><strong>Bodega Bay</strong><span>North of San Francisco. Fishes well from both land and boat. Surfperch, salmon, rockfish.</span></li>
+      <li><strong>Half Moon Bay</strong><span>The main jumping-off point for offshore trips. Halibut, lingcod, salmon, sharks.</span></li>
+      <li><strong>Pacifica Pier and Johnson Pier</strong><span>Easy pier fishing with basic gear. Striped bass, flounder, salmon, sturgeon.</span></li>
+      <li><strong>Fort Baker and Crissy Field</strong><span>Shore spots in Marin and San Francisco. Striped bass, halibut, leopard sharks.</span></li>
+      <li><strong>San Pablo Bay and Sausalito</strong><span>Good surf and shore water. Striped bass, salmon, halibut.</span></li>
+      <li><strong>Berkeley Flats and Emeryville</strong><span>Piers and shore. Striped bass and sturgeon.</span></li>
+      <li><strong>Lake Merced</strong><span>Local spot in San Francisco. Bass and a few other species.</span></li>
     </ul>
-
   </section>
 
   <!-- ==================== TRAINING ==================== -->
   <section class="panel" id="panel-training" role="tabpanel" aria-labelledby="tab-training" tabindex="-1">
-    <h2 class="panel-title">Training</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Training</p>
+      <h2>Simple programming, logged consistently.</h2>
+    </div>
 
-    <p class="lede">
-      Push, pull, legs, three or four days a week depending on how the week goes.
-      I don't deadlift.
-    </p>
-    <p>
-      Progressive overload is the whole approach. Add a little weight or a rep to a lift
-      every session, keep a record of it, and let it compound.
-    </p>
+    <div class="training-grid">
+      <div>
+        <p class="lede">
+          Push, pull, legs, three or four days a week depending on how the week goes.
+          I don't deadlift.
+        </p>
+        <p>
+          Progressive overload is the whole approach. Add a little weight or a rep to a lift
+          every session, keep a record of it, and let it compound.
+        </p>
 
-    <h3 class="sub">Split</h3>
-    <dl class="skills">
-      <div><dt>Push</dt><dd>Chest, shoulders, triceps</dd></div>
-      <div><dt>Pull</dt><dd>Back, biceps</dd></div>
-      <div><dt>Legs</dt><dd>Quads, hamstrings, calves</dd></div>
-    </dl>
+        <h3 class="label-heading">Split</h3>
+        <dl class="skills">
+          <div><dt>Push</dt><dd>Chest, shoulders, triceps</dd></div>
+          <div><dt>Pull</dt><dd>Back, biceps</dd></div>
+          <div><dt>Legs</dt><dd>Quads, hamstrings, calves</dd></div>
+        </dl>
+      </div>
 
-    <h3 class="sub">Numbers</h3>
-    <dl class="skills">
-      <div><dt>Bodyweight</dt><dd>140 lb</dd></div>
-      <div><dt>Bench</dt><dd>185 lb</dd></div>
-      <div><dt>Squat</dt><dd>205 lb</dd></div>
-      <div><dt>Row</dt><dd>270 lb</dd></div>
-      <div><dt>Pull-ups</dt><dd>30 consecutive</dd></div>
-    </dl>
+      <div>
+        <div class="lift-grid" aria-label="Current training numbers">
+          <div><span>Bodyweight</span><strong>145<small> lb</small></strong></div>
+          <div><span>Bench</span><strong>185<small> lb</small></strong></div>
+          <div><span>Squat</span><strong>205<small> lb</small></strong></div>
+          <div><span>Row</span><strong>275<small> lb</small></strong></div>
+        </div>
 
-    <h3 class="sub">Progress</h3>
-    <div class="gallery gallery-single">
-      <figure class="shot">
-        <img src="assets/gym_pic.jpg" alt="David Song at the gym">
-        <span class="shot-hint">assets/gym_pic.jpg</span>
-      </figure>
+        <figure class="training-photo">
+          <img src="assets/gym_pic.jpg" alt="David Song at the gym" loading="lazy">
+        </figure>
+      </div>
     </div>
   </section>
 
   <!-- ==================== NOW ==================== -->
   <section class="panel" id="panel-now" role="tabpanel" aria-labelledby="tab-now" tabindex="-1">
-    <h2 class="panel-title">Now</h2>
+    <div class="section-heading">
+      <p class="eyebrow">Now</p>
+      <h2>Current work and interests.</h2>
+      <p>Updated November 2026.</p>
+    </div>
 
-    <!-- TODO: keep this current, and bump the date at the bottom -->
-    <p class="lede">
-      What I'm working on at the moment.
-    </p>
-    <ul class="plain">
-      <li>Growing <a href="https://replova.app">Replova</a> and its reputation-management workflows.</li>
-      <li>Looking for full-time software engineering roles in the Bay Area.</li>
-      <li>Fishing when I can, and back in the gym consistently.</li>
-    </ul>
-    <p class="muted stamp">Last updated August 2026.</p>
+    <div class="now-grid">
+      <article>
+        <span class="now-index">01</span>
+        <h3>Machine learning from Wi-Fi</h3>
+        <p>Training a PyTorch classifier on Wi-Fi CSI data and comparing performance across antenna designs and signal-path conditions.</p>
+      </article>
+      <article>
+        <span class="now-index">02</span>
+        <h3>Production AI systems</h3>
+        <p>Learning how inference, observability, evaluation, and infrastructure choices change what it takes to run AI reliably.</p>
+      </article>
+      <article>
+        <span class="now-index">03</span>
+        <h3>Next engineering role</h3>
+        <p>Looking for full-time software engineering opportunities where I can work across product, backend systems, and applied AI.</p>
+      </article>
+    </div>
   </section>
 
   <!-- ==================== CONTACT ==================== -->
   <section class="panel" id="panel-contact" role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
-    <h2 class="panel-title">Contact</h2>
-
-    <p class="lede">
-      Email is the best way to reach me.
-    </p>
+    <div class="contact-hero">
+      <p class="eyebrow">Contact</p>
+      <h2>Let's build something useful.</h2>
+      <p>Email is the best way to reach me. I'm open to full-stack, backend, and applied AI engineering conversations in the Bay Area and beyond.</p>
+      <a class="contact-cta" href="mailto:davidhsongg@gmail.com">davidhsongg@gmail.com <span aria-hidden="true">&nearr;</span></a>
+    </div>
 
     <ul class="links">
-      <li><span class="link-label">Email</span><a href="mailto:davidhsongg@gmail.com">davidhsongg@gmail.com</a></li>
       <li><span class="link-label">LinkedIn</span><a href="https://linkedin.com/in/davidhsong">linkedin.com/in/davidhsong</a></li>
       <li><span class="link-label">GitHub</span><a href="https://github.com/davidhsong">github.com/davidhsong</a></li>
       <li><span class="link-label">Spotify</span><a href="https://open.spotify.com/user/lpl0d2nfbnjlf4bo8pjjdynsz">davidhsong</a></li>
-      <li><span class="link-label">Resume</span><a href="david_s_resume.pdf">david_s_resume.pdf</a></li>
-      <!-- Phone left off on purpose. Uncomment to add it back:
-        <li><span class="link-label">Phone</span><a href="tel:+16692361331">669-236-1331</a></li>
-      -->
+      <li><span class="link-label">Resume</span><a href="David_Song_Full_Stack.pdf">View latest resume (PDF)</a></li>
     </ul>
   </section>
 
   </main>
 
   <footer class="foot">
-    <p>San Jose, CA</p>
+    <p>&copy; 2026 David Song</p>
+    <p>San Francisco Bay Area, California</p>
   </footer>
-
 </div>
 
 <script src="main.js"></script>

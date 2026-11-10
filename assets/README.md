@@ -1,22 +1,21 @@
 # assets
 
-Drop image files in here using the names below and they show up on the site
-automatically. There is no HTML to edit.
+## Persistent images
 
-| File | Where it shows |
+| File | Where it appears |
 |---|---|
-| `profile_pic.jpg` | Header, next to your name |
+| `profile_pic.jpg` | Header portrait |
 | `gym_pic.jpg` | Training tab |
 
-Use the real extension. A JPEG named `.png` still renders in most browsers, but it
-gets served with a content type that contradicts the file, which some hosts refuse.
-Phone photos are almost always JPEG.
+## Conference images
 
-Any slot without a file shows a dashed placeholder labelled with the filename it wants,
-so nothing looks broken while you fill them in.
+- `coreweave_pics/` - Fully Connected 2026 blog post
+- `pytorch_pics/` - PyTorch Conference North America 2026 blog post
 
-## Notes
+Conference images are displayed in arrow-only photo decks. Adding a file to a folder
+does not add it to the page automatically because GitHub Pages cannot enumerate static
+directories in the browser. Add one `figure[data-slide]` for the new file in the
+matching Blog article in `index.html`; `main.js` handles the arrows and count.
 
-- Square crops look best. Other shapes work too, CSS crops to center.
-- Photos render in full color. The rest of the page stays black and white.
-- To use a different filename or extension, update the matching `src` in `index.html`.
+Use descriptive `alt` text for each new image. Keep the original extension and avoid
+renaming a JPEG to `.png`.
