@@ -282,60 +282,7 @@ p { margin: 0 0 1.1rem; }
 
 /* ---------- about ---------- */
 
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.55fr) minmax(17rem, 0.85fr);
-  gap: 2.25rem;
-  align-items: start;
-}
-
-.about-copy { max-width: 46rem; }
-
-.spotlight {
-  padding: 1.6rem;
-  border-radius: var(--radius);
-  background: var(--night);
-  color: #f7f5ef;
-  box-shadow: var(--shadow);
-}
-
-.spotlight .eyebrow { color: #ff8a70; }
-
-.spotlight > strong {
-  display: block;
-  margin: 0.2rem 0 0.65rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.4rem, 5vw, 3.7rem);
-  font-weight: 500;
-  letter-spacing: -0.05em;
-  line-height: 1;
-}
-
-.spotlight > p:not(.eyebrow) {
-  color: #c8ced5;
-  font-size: 0.92rem;
-}
-
-.compact-list {
-  margin: 1.2rem 0 0;
-  padding: 1rem 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-  list-style: none;
-}
-
-.compact-list li {
-  position: relative;
-  padding: 0.25rem 0 0.25rem 1rem;
-  color: #e2e6e9;
-  font-size: 0.84rem;
-}
-
-.compact-list li::before {
-  position: absolute;
-  left: 0;
-  color: #ff8a70;
-  content: "+";
-}
+.about-copy { max-width: 52rem; }
 
 .education-block {
   margin-top: 4rem;
@@ -906,7 +853,9 @@ p { margin: 0 0 1.1rem; }
 }
 
 .now-grid article {
+  display: flex;
   min-height: 18rem;
+  flex-direction: column;
   padding: 1.4rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
@@ -932,6 +881,33 @@ p { margin: 0 0 1.1rem; }
   margin: 0;
   color: var(--muted);
   font-size: 0.86rem;
+}
+
+.now-visual {
+  margin: 1.25rem 0 0;
+}
+
+.now-visual a {
+  display: block;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: var(--night);
+}
+
+.now-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.now-visual a:hover img { transform: scale(1.025); }
+
+.now-visual figcaption {
+  margin-top: 0.45rem;
+  color: var(--faint);
+  font-size: 0.67rem;
 }
 
 /* ---------- contact ---------- */
@@ -1050,7 +1026,6 @@ p { margin: 0 0 1.1rem; }
     border-radius: 0.85rem;
   }
 
-  .about-grid,
   .project-grid,
   .now-grid { grid-template-columns: 1fr; }
 
@@ -1131,7 +1106,7 @@ p { margin: 0 0 1.1rem; }
   .js .panel { display: block !important; margin-bottom: 3rem; animation: none; }
   .timeline::before { display: none; }
   .timeline-item { display: block; }
-  .timeline-card, .project-card, .spotlight { box-shadow: none; break-inside: avoid; }
+  .timeline-card, .project-card { box-shadow: none; break-inside: avoid; }
   a { text-decoration: none; }
 }
 

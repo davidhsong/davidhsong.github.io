@@ -7,6 +7,11 @@
 | `profile_pic.jpg` | Header portrait |
 | `gym_pic.jpg` | Training tab |
 
+## Now images
+
+The three images in `now/` are local copies of photos used in the Now cards. Their
+Unsplash source pages are linked from the visible photo credits in `index.html`.
+
 ## Conference images
 
 - `coreweave_pics/` - Fully Connected 2026 blog post
