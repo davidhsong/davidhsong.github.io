@@ -179,17 +179,11 @@ a {
   line-height: 0.92;
 }
 
-.tagline {
-  max-width: 38rem;
-  margin: 1rem 0 1.25rem;
-  color: var(--muted);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-}
-
 .identity-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 1.1rem;
 }
 
 .identity-meta span {
@@ -1075,7 +1069,7 @@ dd { overflow-wrap: break-word; }
   .avatar-frame { width: 100%; }
   .identity h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
   .kicker { font-size: 0.63rem; }
-  .tagline { margin: 0.65rem 0 0.8rem; font-size: 0.92rem; }
+  .identity-meta { margin-top: 0.8rem; }
   .identity-meta span { font-size: 0.68rem; }
 
   .tabs {
@@ -1164,12 +1158,10 @@ dd { overflow-wrap: break-word; }
     font-size: clamp(2.65rem, 15vw, 3.5rem);
   }
 
-  .tagline {
-    max-width: 31rem;
-    font-size: 0.98rem;
+  .identity-meta {
+    gap: 0.4rem;
+    margin-top: 0.85rem;
   }
-
-  .identity-meta { gap: 0.4rem; }
 
   .identity-meta span {
     padding: 0.32rem 0.58rem;
@@ -1248,7 +1240,7 @@ dd { overflow-wrap: break-word; }
 
   .identity h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
 
-  .tagline { margin: 0.55rem 0 0.65rem; }
+  .identity-meta { margin-top: 0.6rem; }
 
   .tabs { margin-bottom: 1.75rem; }
 }
