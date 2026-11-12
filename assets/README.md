@@ -4,7 +4,8 @@
 
 | File | Where it appears |
 |---|---|
-| `profile_pic.jpg` | Header portrait |
+| `profile_pic.jpg` | Original header portrait |
+| `profile_pic_centered.jpg` | Face-centered header portrait |
 | `gym_pic.jpg` | Training tab |
 
 ## Now images

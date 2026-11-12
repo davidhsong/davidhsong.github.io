@@ -22,6 +22,7 @@
     var currentLabel = deck.querySelector('[data-gallery-current]');
     var totalLabel = deck.querySelector('[data-gallery-total]');
     var index = 0;
+    var pointerStart = null;
 
     if (!slides.length) return;
     if (totalLabel) totalLabel.textContent = String(slides.length);
@@ -36,6 +37,10 @@
     function move(step) {
       index = (index + step + slides.length) % slides.length;
       render();
+    }
+
+    function resetPointer() {
+      pointerStart = null;
     }
 
     if (slides.length < 2) {
@@ -55,6 +60,25 @@
           move(1);
         }
       });
+
+      deck.addEventListener('pointerdown', function (event) {
+        if (event.pointerType === 'mouse' && event.button !== 0) return;
+        pointerStart = { x: event.clientX, y: event.clientY };
+      });
+
+      deck.addEventListener('pointerup', function (event) {
+        if (!pointerStart) return;
+
+        var deltaX = event.clientX - pointerStart.x;
+        var deltaY = event.clientY - pointerStart.y;
+        resetPointer();
+
+        if (Math.abs(deltaX) < 48 || Math.abs(deltaX) <= Math.abs(deltaY) * 1.25) return;
+        move(deltaX < 0 ? 1 : -1);
+      });
+
+      deck.addEventListener('pointercancel', resetPointer);
+      deck.addEventListener('lostpointercapture', resetPointer);
     }
 
     render();
@@ -70,19 +94,43 @@
 
   var DEFAULT = 'about';
   var BASE_TITLE = 'David Song';
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var resizeFrame = null;
 
   function nameFromHash() {
     var name = (window.location.hash || '').replace(/^#\/?/, '');
     return document.getElementById('panel-' + name) ? name : DEFAULT;
   }
 
-  function activate(name) {
+  function centerTab(tab, behavior) {
+    if (!tab || tablist.scrollWidth <= tablist.clientWidth) return;
+
+    var target = tab.offsetLeft - (tablist.clientWidth - tab.offsetWidth) / 2;
+    var max = tablist.scrollWidth - tablist.clientWidth;
+
+    tablist.scrollTo({
+      left: Math.max(0, Math.min(target, max)),
+      behavior: reducedMotion.matches ? 'auto' : behavior
+    });
+  }
+
+  function selectedTab() {
+    for (var i = 0; i < tabs.length; i += 1) {
+      if (tabs[i].getAttribute('aria-selected') === 'true') return tabs[i];
+    }
+    return tabs[0];
+  }
+
+  function activate(name, behavior) {
+    var activeTab = null;
+
     tabs.forEach(function (tab) {
       var isActive = tab.id === 'tab-' + name;
       var panel = document.getElementById(tab.getAttribute('aria-controls'));
 
       tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
       tab.setAttribute('tabindex', isActive ? '0' : '-1');
+      if (isActive) activeTab = tab;
 
       if (!panel) return;
       panel.classList.toggle('is-active', isActive);
@@ -93,6 +141,8 @@
           : BASE_TITLE + ' / ' + tab.textContent.trim();
       }
     });
+
+    centerTab(activeTab, behavior || 'auto');
   }
 
   function indexOfSelected() {
@@ -129,9 +179,17 @@
   });
 
   window.addEventListener('hashchange', function () {
-    activate(nameFromHash());
+    activate(nameFromHash(), 'smooth');
     if (window.scrollY > 0) window.scrollTo(0, 0);
   });
 
-  activate(nameFromHash());
+  window.addEventListener('resize', function () {
+    if (resizeFrame !== null) window.cancelAnimationFrame(resizeFrame);
+    resizeFrame = window.requestAnimationFrame(function () {
+      centerTab(selectedTab(), 'auto');
+      resizeFrame = null;
+    });
+  });
+
+  activate(nameFromHash(), 'auto');
 })();

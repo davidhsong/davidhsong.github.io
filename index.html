@@ -2,20 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>David Song - Full-Stack Software Engineer</title>
 <meta name="description" content="David Song is a full-stack software engineer and SJSU computer science graduate in the San Francisco Bay Area.">
 <meta name="author" content="David Song">
-<meta name="theme-color" content="#f5f2eb">
+<meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1218" media="(prefers-color-scheme: dark)">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="David Song - Full-Stack Software Engineer">
 <meta property="og:description" content="Full-stack product engineering, machine learning, and production-minded software.">
 <meta property="og:url" content="https://davidhsong.github.io">
-<meta property="og:image" content="https://davidhsong.github.io/assets/profile_pic.jpg">
+<meta property="og:image" content="https://davidhsong.github.io/assets/profile_pic_centered.jpg">
 
 <!-- Bump the asset version whenever CSS or JavaScript changes. -->
-<link rel="stylesheet" href="./styles.css?v=20261110-1" media="all">
+<link rel="stylesheet" href="./styles.css?v=20261112-1" media="all">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23161c24'/><text x='50' y='68' text-anchor='middle' font-size='55' fill='%23f5f2eb' font-family='Arial,sans-serif' font-weight='700'>DS</text></svg>">
 
 <script>document.documentElement.classList.add('js');</script>
@@ -27,14 +28,14 @@
 <div class="site-shell">
   <header class="masthead">
     <div class="avatar-frame" id="avatar-frame">
-      <img class="avatar" id="avatar" src="assets/profile_pic.jpg" alt="Portrait of David Song" width="168" height="168">
+      <img class="avatar" id="avatar" src="assets/profile_pic_centered.jpg" alt="Close portrait of David Song" width="168" height="168">
       <span class="avatar-fallback" aria-hidden="true">DS</span>
     </div>
 
     <div class="identity">
       <p class="kicker">Full-stack software engineer</p>
       <h1>David Song</h1>
-      <p class="tagline">I build end-to-end products across web, cloud, and machine learning.</p>
+      <p class="tagline">I make useful software and enjoy figuring out the messy parts along the way.</p>
       <div class="identity-meta">
         <span>San Francisco Bay Area</span>
         <span>SJSU CS '25</span>
@@ -127,9 +128,9 @@
           <h3>Founder &amp; Full-Stack Software Engineer</h3>
           <p class="timeline-org"><a href="https://replova.app">Replova</a></p>
           <ul>
-            <li>Built an installable review platform tested by two businesses, syncing Google Business Profile reviews and replies.</li>
+            <li>Built an installable review platform tested by 2 businesses, syncing Google Business Profile reviews and replies.</li>
             <li>Drafted replies in each business's voice with Claude and labeled reviews by sentiment and urgency.</li>
-            <li>Added Stripe subscriptions and Resend email digests, then scheduled review syncs with AWS Lambda and EventBridge.</li>
+            <li>Added Stripe subscriptions, Resend email digests, and 6 automated background workflows with AWS Lambda and EventBridge.</li>
           </ul>
         </div>
         <span class="timeline-marker" aria-hidden="true"></span>
@@ -176,8 +177,8 @@
           <h3>Software Engineer Intern</h3>
           <p class="timeline-org"><a href="https://lifestages.us">Life Stages</a></p>
           <ul>
-            <li>Halved the React Daily Check-in flow from six steps to three and added validation to prevent invalid submissions.</li>
-            <li>Connected check-in and profile screens to REST APIs and defined request and response data with TypeScript.</li>
+            <li>Cut the React Daily Check-in flow from 6 steps to 3, a 50% reduction, and added validation to prevent invalid submissions.</li>
+            <li>Worked on a 6-engineer team to connect check-in and profile screens to REST APIs and define request and response data with TypeScript.</li>
             <li>Replaced repeated interface elements with reusable React components, simplifying updates across screens.</li>
             <li>Fixed an iOS Safari flexbox issue that prevented the check-in form from displaying correctly.</li>
             <li>Added Jest unit and integration tests and GitHub Actions checks for coverage.</li>
@@ -211,8 +212,8 @@
           <h3>Front-End Lead</h3>
           <p class="timeline-org">Theta Tau &middot; HydroSense</p>
           <ul>
-            <li>Led a three-person frontend team within a 17-member engineering group to build an environmental monitoring dashboard.</li>
-            <li>Structured four user-facing pages and seven reusable components with Next.js, React Context, Tailwind CSS, and MUI.</li>
+            <li>Led a 3-person frontend team within a 17-member engineering group to build an environmental monitoring dashboard.</li>
+            <li>Structured 4 user-facing pages and 7 reusable components with Next.js, React Context, Tailwind CSS, and MUI.</li>
             <li>Connected Google sign-in, Drive file selection, Sheets exports, and Firebase data for the SJSU Community Garden.</li>
           </ul>
         </div>
@@ -649,6 +650,6 @@
   </footer>
 </div>
 
-<script src="./main.js?v=20261109-1"></script>
+<script src="./main.js?v=20261112-1"></script>
 </body>
 </html>
